@@ -1,144 +1,115 @@
-/* Reset some default styling */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  /* Body styles */
-  body {
-    font-family: 'Roboto', sans-serif;
-    color: #333;
-    line-height: 1.6;
-  }
-  
-  /* Container utility */
-  .container {
-    width: 90%;
-    margin: auto;
-    max-width: 1200px;
-  }
-  
-  /* Header and Navigation */
-  header {
-    background: #fff;
-    padding: 20px 0;
-    border-bottom: 1px solid #ddd;
-  }
-  .header-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .logo h1 {
-    font-size: 24px;
-    color: #000;
-  }
-  nav ul {
-    list-style: none;
-    display: flex;
-  }
-  nav ul li {
-    margin-left: 20px;
-  }
-  nav ul li a {
-    text-decoration: none;
-    color: #333;
-    font-weight: 500;
-    transition: color 0.3s ease;
-  }
-  nav ul li a:hover {
-    color: #007acc;
-  }
-  
-  /* Mobile menu toggle styling (optional) */
-  .menu-toggle {
-    display: none;
-    font-size: 24px;
-    cursor: pointer;
-  }
-  
-  /* Hero Section */
-  .hero {
-    background: url('hero-image.jpg') center center/cover no-repeat;
-    min-height: 80vh;
-    display: flex;
-    align-items: center;
-  }
-  .hero-content {
-    color: #fff;
-    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
-  }
-  .hero h2 {
-    font-size: 48px;
-    margin-bottom: 20px;
-  }
-  .hero p {
-    font-size: 20px;
-    margin-bottom: 30px;
-  }
-  .btn {
-    text-decoration: none;
-    background: #007acc;
-    color: #fff;
-    padding: 10px 20px;
-    border-radius: 4px;
-    transition: background 0.3s ease;
-  }
-  .btn:hover {
-    background: #005f99;
-  }
-  
-  /* Footer Styling */
-  footer {
-    background: #f4f4f4;
-    padding: 20px 0;
-    margin-top: 40px;
-    text-align: center;
-    font-size: 14px;
-    color: #666;
-  }
-  
-  /* Responsive Styles */
-  @media (max-width: 768px) {
-    .header-container {
-      flex-wrap: wrap;
-    }
-    nav ul {
-      flex-direction: column;
-      width: 100%;
-      display: none;
-    }
-    nav ul.active {
-      display: flex;
-    }
-    nav ul li {
-      margin: 10px 0;
-    }
-    .menu-toggle {
-      display: block;
-    }
-    .page-section {
-      padding: 6rem 2rem;
-      max-width: 800px;
-      margin: auto;
-      margin-top: 100px;
-      color: #fff;
-    }
-    .page-section h1 {
-      font-size: 2.5rem;
-      margin-bottom: 1.5rem;
-      text-align: center;
-    }
-    .page-section p,
-    .page-section li {
-      font-size: 1.2rem;
-      line-height: 1.6;
-    }
-    .portfolio-list {
-      margin-top: 1rem;
-      padding-left: 1.5rem;
-      list-style-type: square;
-    }
-  }
-  
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Georgia', serif;
+  background-color: #000;
+  color: #fff;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #5d4b7b;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  z-index: 1000;
+}
+
+.nav-brand {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.nav-links li a:hover {
+  text-decoration: underline;
+}
+
+.hero-section {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  text-align: center;
+  position: relative;
+  margin-top: 80px;
+}
+
+.hero-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("portfolio-hero.png") center center no-repeat;
+  background-size: cover;
+  z-index: -1;
+}
+
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+  z-index: 1;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  font-size: 1.3rem;
+  line-height: 1.6;
+}
+
+.page-section {
+  padding: 6rem 2rem;
+  max-width: 800px;
+  margin: auto;
+  margin-top: 100px;
+  color: #fff;
+}
+
+.page-section h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.page-section p,
+.page-section li {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+.portfolio-list {
+  margin-top: 1rem;
+  padding-left: 1.5rem;
+  list-style-type: square;
+}
+
+footer {
+  background-color: #222;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+}

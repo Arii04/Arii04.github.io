@@ -4,31 +4,23 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Aryan Rallan's Portfolio</title>
-  <!-- Link to external CSS -->
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- Navigation Bar -->
-  <nav class="navbar">
-    <div class="nav-brand">Aryan Rallan's Portfolio</div>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="#home" onclick="toggleMenu()">Home</a></li>
-      <li><a href="#about" onclick="toggleMenu()">About</a></li>
-      <li><a href="#portfolio" onclick="toggleMenu()">Portfolio</a></li>
-      <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
-    </ul>
-    <div class="menu-btn" onclick="toggleMenu()">
-      <span class="bar"></span>
-      <span class="bar"></span>
-      <span class="bar"></span>
-    </div>
-  </nav>
 
-  <!-- Hero Section -->
+  <header class="navbar">
+    <div class="nav-brand">Aryan Rallan's Portfolio</div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
   <section id="home" class="hero-section">
-    <!-- The hero image is placed in the background via CSS.
-         This <div> can contain the same image as a background or 
-         you can embed it directly as an <img> if you prefer. -->
     <div class="hero-image"></div>
     <div class="hero-content">
       <h1>WELCOME TO my Portfolio</h1>
@@ -40,30 +32,9 @@
     </div>
   </section>
 
-  <!-- About Section (Placeholder) -->
-  <section id="about" class="placeholder-section">
-    <h2>About Me</h2>
-    <p>Brief information about you or your background goes here.</p>
-  </section>
-
-  <!-- Portfolio Section (Placeholder) -->
-  <section id="portfolio" class="placeholder-section">
-    <h2>My Projects</h2>
-    <p>Showcase your projects here.</p>
-  </section>
-
-  <!-- Contact Section (Placeholder) -->
-  <section id="contact" class="placeholder-section">
-    <h2>Contact</h2>
-    <p>Contact details or a contact form here.</p>
-  </section>
-
-  <!-- Footer -->
   <footer>
-    <p>© 2025, Aryan Rallan. All rights reserved.</p>
+    <p>© 2025 by AR-Portfolio. All rights reserved.</p>
   </footer>
 
-  <!-- Link to external JS -->
-  <script src="script.js"></script>
 </body>
 </html>
