@@ -11,8 +11,12 @@
 
 body {
   font-family: 'Avenir Light', sans-serif; /* Paragraph font */
-  background-color: #000;
-  color: #fff;
+  background-color: #CFC3B1;
+  color: #000;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensure the body takes up the full viewport height */
+  margin: 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -60,7 +64,7 @@ h1, h2, h3, h4, h5, h6 {
   text-align: center;
   padding: 1rem;
   font-size: 0.9rem;
-  margin-top: 0; /* Remove margin above the footer */
+  margin-top: 0;
   border-top: 2px solid #4a3a63; /* Optional border for separation */
 }
 
@@ -95,6 +99,9 @@ h1, h2, h3, h4, h5, h6 {
   max-width: 800px;
   margin: 0 auto;
   z-index: 1;
+  position: relative; /* Ensure positioning can be adjusted */
+  top: -300px; /* Move the text upwards */
+  text-align: center; /* Keep the text centered */
 }
 
 .hero-content h1 {
@@ -107,9 +114,19 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.6;
 }
 
+.index-page .hero-section {
+  margin-top: 0; /* Remove the gap above the hero section */
+}
+
+.index-page .hero-content h1,
+.index-page .hero-content p {
+  color: #CFC3B1; /* Make text white */
+}
+
 /* About Page Styles */
 .about-section {
   padding: 4rem 2rem;
+  margin-bottom: 0; /* Remove extra margin below the section */
 }
 
 .about-header {
@@ -152,7 +169,7 @@ h1, h2, h3, h4, h5, h6 {
   background-color: #5E6D55; /* Green backdrop */
   padding: 2rem;
   border-radius: 10px;
-  margin-bottom: 2rem;
+  margin-bottom: 0; /* Reduce spacing below the story section */
 }
 
 .story-image-container {
@@ -227,6 +244,7 @@ h1, h2, h3, h4, h5, h6 {
 .contact-section {
   background-color: #5E6D55; /* Green background like the about page */
   padding: 4rem 0; /* Add spacing above and below the container */
+  flex: 1; /* Allow the contact section to grow and fill the remaining space */
 }
 
 .contact-container {
