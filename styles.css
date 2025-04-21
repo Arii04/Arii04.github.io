@@ -34,11 +34,20 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   padding: 1rem 2rem;
   z-index: 1000;
+  transition: top 0.3s;
+}
+
+.navbar.hidden {
+  top: -100px; /* Hide the navbar */
 }
 
 .nav-brand {
   font-size: 1.2rem;
   font-weight: bold;
+}
+
+.nav-links-container {
+  display: flex;
 }
 
 .nav-links {
@@ -55,6 +64,17 @@ h1, h2, h3, h4, h5, h6 {
 
 .nav-links li a:hover {
   text-decoration: underline;
+}
+
+/* Hamburger Menu */
+.hamburger-menu {
+  display: none; /* Hidden by default */
+  font-size: 2rem;
+  cursor: pointer;
+  color: #CFC3B1; /* Cream color matching the about page background */
+  position: absolute; /* Position it to the right */
+  right: 2rem; /* Align it to the right with some spacing */
+  top: 0.7rem; /* Move it slightly higher */
 }
 
 /* Footer Styles */
@@ -147,19 +167,20 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .about-intro {
-  flex: 1;
+  width: 100%; /* Ensure the text container takes full width */
+  padding: 0 2rem; /* Add padding to keep the text inside the green box */
+  text-align: center; /* Center the text */
 }
 
 .about-intro h1 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-  color: #000; /* Black text */
+  font-size: 3rem; /* Increase heading size */
+  margin-bottom: 1.5rem; /* Add spacing below the heading */
 }
 
 .about-intro p {
-  font-size: 1.2rem;
-  line-height: 1.6;
-  color: #000; /* Black text */
+  font-size: 1.5rem; /* Increase paragraph size for readability */
+  line-height: 2; /* Adjust line height for better spacing */
+  color: #000; /* Ensure text color is black */
 }
 
 .about-story {
@@ -173,33 +194,31 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .story-image-container {
-  flex: 1; /* Reduce the space taken by the image */
-  max-width: 40%; /* Limit the image container width */
+  width: 100%; /* Make the image container take full width */
+  text-align: center; /* Center the image */
 }
 
 .story-image {
-  width: 100%; /* Make the image fill its container */
-  max-width: 100%; /* Ensure the image doesn't exceed its container */
-  object-fit: cover;
-  border-radius: 10px;
-  margin-bottom: 1rem; /* Add space between the image and button */
+  width: 100%; /* Make the image responsive */
+  max-width: 500px; /* Increase the maximum width of the image */
+  height: auto; /* Maintain aspect ratio */
+  margin-bottom: 2rem; /* Add spacing below the image */
 }
 
 .story-link {
-  text-align: center; /* Center the button below the image */
+  margin-top: 2rem; /* Add spacing above the button */
+  text-align: center; /* Center the button */
 }
 
 .story-link a {
   display: inline-block;
   padding: 1rem 2rem; /* Increase padding for a larger button */
-  width: 90%; /* Make the button wider */
-  max-width: 350px; /* Limit the maximum width */
   background-color: #5d4b7b;
   color: #fff;
   text-decoration: none;
-  font-size: 1rem; /* Keep font size consistent with text */
+  font-size: 1rem;
   border-radius: 5px;
-  text-align: center; /* Center the text inside the button */
+  text-align: center;
 }
 
 .story-link a:hover {
@@ -207,8 +226,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .story-content {
-  flex: 3; /* Increase the space taken by the text */
-  max-width: 100%; /* Allow the text to expand fully */
+  width: 100%; /* Make the text container take full width */
+  text-align: center; /* Center the text */
+  padding: 0 1rem; /* Add padding for better readability */
 }
 
 .story-content h2 {
@@ -366,6 +386,27 @@ h1, h2, h3, h4, h5, h6 {
     padding: 1rem;
   }
 
+  .hamburger-menu {
+    display: block; /* Show hamburger menu on mobile */
+  }
+
+  .nav-links-container {
+    display: none; /* Hide the menu by default */
+    position: absolute;
+    top: 60px; /* Below the navbar */
+    right: 0;
+    background-color: #5d4b7b;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+    z-index: 1000;
+  }
+
+  .nav-links-container.active {
+    display: flex; /* Show the menu when active */
+  }
+
   .nav-links {
     flex-direction: column;
     gap: 1rem;
@@ -373,8 +414,15 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .nav-links li a {
-    font-size: 1rem;
-    text-align: left;
+    font-size: 1.2rem;
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    width: 100%;
+  }
+
+  .nav-links li a:hover {
+    background-color: #4a3a63;
   }
 
   /* Hero Section */
@@ -396,6 +444,60 @@ h1, h2, h3, h4, h5, h6 {
   .hero-content p {
     font-size: 1rem;
     line-height: 1.4;
+  }
+
+  /* About Header Section */
+  .about-header {
+    display: flex;
+    flex-direction: column; /* Stack the image and text vertically */
+    align-items: center; /* Center the content */
+    gap: 2rem; /* Add spacing between the image and text */
+    text-align: center; /* Center the text */
+  }
+
+  .about-image {
+    width: 150px; /* Adjust the image size for smaller screens */
+    height: 150px;
+    margin-bottom: 1rem; /* Add spacing below the image */
+  }
+
+  .about-intro {
+    width: 100%; /* Make the text container take full width */
+    padding: 0 1rem; /* Add padding for better readability */
+  }
+
+  .about-intro h1 {
+    font-size: 2rem; /* Adjust heading size */
+  }
+
+  .about-intro p {
+    font-size: 1rem; /* Adjust paragraph size */
+    line-height: 1.4; /* Improve readability */
+  }
+
+  /* About Story Section */
+  .about-story {
+    display: flex;
+    flex-direction: column; /* Stack the image and text vertically */
+    align-items: center; /* Center the content */
+    gap: 2rem; /* Add spacing between the image and text */
+  }
+
+  .story-image-container {
+    width: 100%; /* Make the image container take full width */
+    text-align: center; /* Center the image */
+  }
+
+  .story-image {
+    width: 100%; /* Make the image responsive */
+    max-width: 400px; /* Limit the maximum width of the image */
+    height: auto; /* Maintain aspect ratio */
+  }
+
+  .story-content {
+    width: 100%; /* Make the text container take full width */
+    text-align: center; /* Center the text */
+    padding: 0 1rem; /* Add padding for better readability */
   }
 
   /* Contact Section */
