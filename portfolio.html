@@ -12,8 +12,8 @@
 <body>
 
   <header class="navbar">
-    <div class="nav-brand">Aryan Rallan's Portfolio</div>
-    <div class="hamburger-menu" id="hamburger-menu">
+<div class="nav-brand">Aryan Rallan's Portfolio</div>
+<div class="hamburger-menu" id="hamburger-menu">
       <i class="fas fa-bars"></i>
     </div>
     <nav class="nav-links-container" id="nav-links-container">
@@ -26,15 +26,41 @@
     </nav>
   </header>
 
-  <section class="page-section">
-    <h1>My Work</h1>
-    <p>Here are some of the video game projects I've worked on:</p>
+  <section class="portfolio-section" id="portfolio-section">
+    <h1>My Portfolio</h1>
+    <p>Welcome to my portfolio. Here you’ll find a selection of my work. Explore my projects to learn more about what I do. Click the images to begin.</p>
     
-    <ul class="portfolio-list">
-      <li><strong>Pixel Runner</strong> – A retro platformer with stealth mechanics.</li>
-      <li><strong>Void Realm</strong> – A top-down action RPG with branching storylines.</li>
-      <li><strong>Neon Drift</strong> – Cyberpunk racing game built in Unity.</li>
-    </ul>
+    <div class="portfolio-grid">
+      <div class="portfolio-item" onclick="showProjectDetails('BBD')">
+        <img src="./images/BBD.jpg" alt="Brittney's Bad Day" />
+        <p>Brittney's Bad Day (C++ game)</p>
+      </div>
+      <div class="portfolio-item" onclick="showProjectDetails('OpenGL')">
+        <img src="./images/OpenGL.jpg" alt="OpenGL Scene" />
+        <p>OpenGL Scene</p>
+      </div>
+      <div class="portfolio-item" onclick="showProjectDetails('Sonic')">
+        <img src="./images/Sonic Cover.png" alt="Sonic Clone" />
+        <p>Sonic Clone (Unity)</p>
+      </div>
+      <div class="portfolio-item" onclick="showProjectDetails('Forsaken')">
+        <img src="./images/Forsaken Wilds Cover.png" alt="Forsaken Wilds: Ascend" />
+        <p>Forsaken Wilds: Ascend (Unreal Engine)</p>
+      </div>
+      <div class="portfolio-item" onclick="showProjectDetails('Pathfinding')">
+        <img src="./images/Pathfinding.png" alt="Pathfinding Algorithm" />
+        <p>Pathfinding Algorithm (C++)</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="project-details" id="project-details" style="display: none;">
+    <button onclick="hideProjectDetails()">Back to Portfolio</button>
+    <h1 id="project-title"></h1>
+    <p><strong>Project Type:</strong> <span id="project-type"></span></p>
+    <p><strong>Date:</strong> <span id="project-date"></span></p>
+    <p id="project-description"></p>
+    <img id="project-image" src="" alt="Project Image" />
   </section>
 
   <footer class="site-footer">
