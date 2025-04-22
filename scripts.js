@@ -83,6 +83,7 @@ const projects = [
     media: [
       { type: "image", src: "./images/Sonic Cover.png" },
       { type: "video", src: "./videos/Sonic Clone (Unity).mp4" },
+      { type: "image", src: "./images/Sonic End.png" },
     ],
   },
   {
@@ -181,6 +182,11 @@ function openImageModal(imageSrc) {
 function closeImageModal() {
   const modal = document.getElementById("image-modal");
   modal.style.display = "none"; // Hide the modal
+}
+
+function hideProjectDetails() {
+  document.getElementById("project-details").style.display = "none"; // Hide project details
+  document.getElementById("portfolio-section").style.display = "block"; // Show portfolio grid
 }
 
 // Remove event listeners for portfolio grid images
