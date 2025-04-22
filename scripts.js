@@ -55,6 +55,7 @@ const projects = [
     type: "C++ Code",
     date: "December 2023",
     description: `For a university project, I created a wave-based game where the player must survive to the end of a round to receive upgrades to get to the furthest round possible.This game was made using C++ and a code-based engine developed by the university. For each enemy, I had to use pointers to assign attributes such as health and speed for each enemy type and dynamically spawn new game objects such as ink projectiles using pointers.  All game assets were created by myself.For a university project, I created a wave-based game where the player must survive to the end of a round to receive upgrades to get to the furthest round possible.`,
+    github: "https://github.com/Arii04/Brittneys-Bad-Day",
     media: [
       { type: "image", src: "./images/BBD.jpg" },
       { type: "video", src: "./videos/Brittney's Bad Day.mp4" },
@@ -66,6 +67,7 @@ const projects = [
     type: "Graphics Programming",
     date: "January 2025",
     description: `For this project, I was tasked with creating an OpenGL program with GLSL shaders. I used various techniques to help set the scene, including fog, light attenuation, shadows through shadow maps, and animated characters.`,
+    github: "https://github.com/Arii04/OpenGL-scence",
     media: [
       { type: "image", src: "./images/OpenGL.jpg" },
       { type: "video", src: "./videos/OpenGL.mp4" },
@@ -77,6 +79,7 @@ const projects = [
     type: "Unity Game Development",
     date: "January 2025",
     description: `Sonic Clone was a game made in Unity in which I tried to recreate the physics of a Sonic player character. The main appeal for Sonic is pure speed, momentum, or a combination of both. For this project, I tried to emulate momentum-based movement.`,
+    github: "https://github.com/Arii04/sonic-clone",
     media: [
       { type: "image", src: "./images/Sonic Cover.png" },
       { type: "video", src: "./videos/Sonic Clone (Unity).mp4" },
@@ -88,6 +91,7 @@ const projects = [
     type: "Unreal Engine Game Development",
     date: "January 2024",
     description: `Forsaken Wilds: Ascend is a platforming game made in Unreal Engine 5. For this project, we were tasked with going through what an actual game development cycle would be. This means creating a game proposal, design document, Trello board to keep track of development, and a working prototype.`,
+    github: "https://github.com/Arii04/ForsakenWildsRemade",
     media: [
       { type: "image", src: "./images/Forsaken Wilds Cover.png" },
       { type: "video", src: "./videos/Forsaken Wilds Final.mp4" },
@@ -100,6 +104,7 @@ const projects = [
     type: "Artificial Intelligence",
     date: "November 2024",
     description: `For this project, I was tasked with creating artificial intelligence. I did this in terms of pathfinding, specifically for the enemies. The pathfinding algorithm used was A* and allowed the player's chess piece to find a way to the selected node while moving the enemy pieces to other nodes based on what piece they are.`,
+    github: "https://github.com/Arii04/Pathfinding-Algorithm",
     media: [
       { type: "image", src: "./images/Pathfinding.png" },
       { type: "video", src: "./videos/Pathfinding Algorithm.mp4" },
@@ -143,6 +148,14 @@ function updateProjectDetails() {
       galleryItems.appendChild(video);
     }
   });
+
+  // Add GitHub link
+  const githubLinkContainer = document.getElementById("github-link");
+  if (project.github) {
+    githubLinkContainer.innerHTML = `<a href="${project.github}" target="_blank" class="github-link">View on GitHub</a>`;
+  } else {
+    githubLinkContainer.innerHTML = ""; // Clear if no GitHub link
+  }
 
   document.getElementById("portfolio-section").style.display = "none";
   document.getElementById("project-details").style.display = "block";
