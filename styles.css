@@ -419,6 +419,94 @@ h1, h2, h3, h4, h5, h6 {
   color: #000;
 }
 
+/* Project Details Section */
+.project-details-container {
+  display: flex;
+  flex-wrap: nowrap; /* Prevent wrapping */
+  justify-content: space-between;
+  align-items: flex-start; /* Align items to the top */
+  padding: 2rem;
+  background-color: #E8D4B0;
+  border-radius: 10px;
+  margin: 2rem auto;
+  max-width: 1200px;
+  gap: 2rem; /* Add spacing between text and gallery */
+}
+
+.project-details-text {
+  flex: 0 0 35%; /* Allocate 35% of the width to the text */
+  max-width: 35%;
+  padding-right: 1rem;
+}
+
+.project-details-text h1 {
+  font-size: 2.5rem; /* Adjusted font size */
+  margin-bottom: 1rem;
+  color: #000;
+}
+
+.project-details-text p {
+  font-size: 1.2rem; /* Adjusted font size */
+  line-height: 1.6; /* Adjusted line height */
+  margin-bottom: 1rem;
+  color: #000;
+}
+
+.project-details-gallery {
+  flex: 1; /* Allocate remaining space to the gallery */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem; /* Add spacing between gallery items */
+  justify-content: center;
+}
+
+.project-details-gallery img,
+.project-details-gallery video {
+  width: 100%;
+  max-width: 400px; /* Increase max width for better visibility */
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.project-details-gallery video {
+  outline: none;
+}
+
+.project-navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+.project-navigation button {
+  padding: 12px 24px; /* Slightly larger padding */
+  font-size: 18px; /* Increased font size */
+  cursor: pointer;
+  background-color: #5d4b7b;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.project-navigation button:hover {
+  background-color: #4a3a63;
+}
+
+.project-navigation button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Remove the back-to-portfolio button styles */
+.back-to-portfolio {
+  display: none;
+}
+
+.project-details-header {
+  margin-bottom: 0; /* Adjust spacing if necessary */
+}
+
 /* Responsive Styles */
 @media (max-width: 768px) {
   .navbar {
@@ -553,5 +641,28 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: 0;
     padding: 1rem;
     font-size: 0.9rem;
+  }
+
+  .project-details-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .project-details-text {
+    max-width: 100%;
+    padding-right: 0;
+    margin-bottom: 2rem;
+  }
+
+  .project-details-text h1 {
+    font-size: 2.5rem; /* Adjusted for smaller screens */
+  }
+
+  .project-details-text p {
+    font-size: 1.3rem; /* Adjusted for smaller screens */
+  }
+
+  .project-details-image {
+    max-width: 100%;
   }
 }

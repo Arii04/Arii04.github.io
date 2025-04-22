@@ -1,8 +1,9 @@
 // Initialize EmailJS and other functionalities
 
-
 document.addEventListener('DOMContentLoaded', function () {
- emailjs.init("X4WnKdYAKQcWyJQiy"); // Replace with your actual EmailJS public key // Hamburger menu functionality
+  emailjs.init("X4WnKdYAKQcWyJQiy"); // Replace with your actual EmailJS public key
+
+  // Hamburger menu functionality
   const hamburgerMenu = document.getElementById('hamburger-menu');
   const navLinksContainer = document.getElementById('nav-links-container');
   const navbar = document.querySelector('.navbar');
@@ -47,60 +48,108 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 });
 
-const projects = {
-  BBD: {
+const projects = [
+  {
+    id: "BBD",
     title: "Brittney's Bad Day (C++ game)",
     type: "C++ Code",
     date: "December 2023",
-    description: `For a university project, I created a wave-based game where the player must survive to the end of a round to receive upgrades to get to the furthest round possible.
-                  This game was made using C++ and a code-based engine developed by the university. For each enemy, I had to use pointers to assign attributes such as health and speed for each enemy type and dynamically spawn new game objects such as ink projectiles using pointers.  All game assets were created by myself.For a university project, I created a wave-based game where the player must survive to the end of a round to receive upgrades to get to the furthest round possible. This game was made using C++ and a code-based engine developed by the university. For each enemy, I had to use pointers to assign attributes such as health and speed for each enemy type and dynamically spawn new game objects such as ink projectiles using pointers. All game assets were created by myself.`,
-    image: "./images/BBD.jpg",
+    description: `For a university project, I created a wave-based game where the player must survive to the end of a round to receive upgrades to get to the furthest round possible.`,
+    media: [
+      { type: "image", src: "./images/BBD.jpg" },
+      { type: "video", src: "./videos/Brittney's Bad Day.mp4" },
+    ],
   },
-  OpenGL: {
+  {
+    id: "OpenGL",
     title: "OpenGL Scene",
     type: "Graphics Programming",
     date: "January 2025",
-    description: `For this project I was tasked with creating a OpenGL program with GLSL shaders. I used various techniques to help set the scene including fog, light attenuation, shadows through shadow-maps and animated characters `,
-    image: "./images/OpenGL.jpg",
-  },
-  Sonic: {
+    description: `For this project, I was tasked with creating an OpenGL program with GLSL shaders. I used various techniques to help set the scene, including fog, light attenuation, shadows through shadow maps, and animated characters.`,
+    media: [
+      { type: "image", src: "./images/OpenGL.jpg" },
+      { type: "video", src: "./videos/OpenGL.mp4" },
+    ],
+},
+      {
+    id: "Sonic",
     title: "Sonic Clone (Unity)",
     type: "Unity Game Development",
     date: "January 2025",
-    description: `Sonic Clone was a game made in Unity in which I tried to recreate the physics of a Sonic player character. The main appeal for sonic is pure speed, momentum or a combination of both. For this project I tried to emulate momentum based movement.`,
-    image: "./images/Sonic Cover.png",
+    description: `Sonic Clone was a game made in Unity in which I tried to recreate the physics of a Sonic player character. The main appeal for Sonic is pure speed, momentum, or a combination of both. For this project, I tried to emulate momentum-based movement.`,
+    media: [
+      { type: "image", src: "./images/Sonic Cover.png" },
+      { type: "video", src: "./videos/Sonic Clone (Unity).mp4" },
+    ],
   },
-  Forsaken: {
+  {
+    id: "Forsaken",
     title: "Forsaken Wilds: Ascend (Unreal Engine)",
     type: "Unreal Engine Game Development",
     date: "January 2024",
-    description: `Forsaken Wilds: Ascend is a platforming game made in Unreal Engine 5. For this project, we were tasked with going through what an actual game development cycle would be. This means creating a game proposal, design document, Trello board to keep track of development and a working prototype. 
-                  I had worked in a team as the main programmer since I had some experience using the Unreal engine.  I had worked closely with the other members of my team to provide the assets I needed such as the player character, enemies and tilemap for the platforms. For a project this size it took on an object-oriented approach in which base classes were made to be inherited from to reduce redundant/ duplicated code. For example, a base projectile class was made in which the player and enemy projectiles inherited from. 
-                  Below there is the game and part of the development is shown.`,
-    image: "./images/Forsaken Wilds Cover.png",
+    description: `Forsaken Wilds: Ascend is a platforming game made in Unreal Engine 5. For this project, we were tasked with going through what an actual game development cycle would be. This means creating a game proposal, design document, Trello board to keep track of development, and a working prototype.`,
+    media: [
+      { type: "image", src: "./images/Forsaken Wilds Cover.png" },
+      { type: "video", src: "./videos/Forsaken Wilds Final.mp4" },
+      { type: "video", src: "./videos/Forsaken Wilds Prototype.mp4" },
+    ],
   },
-  Pathfinding: {
+  {
+    id: "Pathfinding",
     title: "Pathfinding Algorithm (C++)",
     type: "Artificial Intelligence",
     date: "November 2024",
-    description: `For this project I was tasked with creating artificial intelligence. I did this in terms of pathfinding, specifically for the enemies. The pathfinding Algorithm used was A* and allowed the players chess piece to find a way to the selected note while moving the enemy pieces to other nodes based on what piece they are. the enemies have two goals, to escape from being captured and to capture the player so their behaviour will alternate between the two based on the proximity to the player .`,
-    image: "./images/Pathfinding.png",
+    description: `For this project, I was tasked with creating artificial intelligence. I did this in terms of pathfinding, specifically for the enemies. The pathfinding algorithm used was A* and allowed the player's chess piece to find a way to the selected node while moving the enemy pieces to other nodes based on what piece they are.`,
+    media: [
+      { type: "image", src: "./images/Pathfinding.png" },
+      { type: "video", src: "./videos/Pathfinding Algorithm.mp4" },
+   
+    ],
   },
-};
+];
+
+let currentProjectIndex = 0;
 
 function showProjectDetails(projectId) {
-  const project = projects[projectId];
+  currentProjectIndex = projects.findIndex((project) => project.id === projectId);
+  updateProjectDetails();
+}
+
+function updateProjectDetails() {
+  const project = projects[currentProjectIndex];
   document.getElementById("project-title").textContent = project.title;
   document.getElementById("project-type").textContent = project.type;
   document.getElementById("project-date").textContent = project.date;
   document.getElementById("project-description").textContent = project.description;
-  document.getElementById("project-image").src = project.image;
+
+  const galleryItems = document.getElementById("gallery-items");
+  galleryItems.innerHTML = ""; // Clear previous gallery items
+
+  project.media.forEach((item) => {
+    if (item.type === "image") {
+      const img = document.createElement("img");
+      img.src = item.src;
+      img.alt = project.title;
+      galleryItems.appendChild(img);
+    } else if (item.type === "video") {
+      const video = document.createElement("video");
+      video.src = item.src;
+      video.controls = true;
+      video.innerHTML = "Your browser does not support the video tag.";
+      galleryItems.appendChild(video);
+    }
+  });
 
   document.getElementById("portfolio-section").style.display = "none";
   document.getElementById("project-details").style.display = "block";
+
+  // Enable/disable navigation buttons
+  document.getElementById("prev-project").disabled = currentProjectIndex === 0;
+  document.getElementById("next-project").disabled = currentProjectIndex === projects.length - 1;
 }
 
-function hideProjectDetails() {
-  document.getElementById("portfolio-section").style.display = "block";
-  document.getElementById("project-details").style.display = "none";
+function navigateProject(direction) {
+  currentProjectIndex += direction;
+  updateProjectDetails();
 }
+

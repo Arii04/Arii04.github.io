@@ -55,16 +55,25 @@
   </section>
 
   <section class="project-details" id="project-details" style="display: none;">
-    <button onclick="hideProjectDetails()">Back to Portfolio</button>
-    <h1 id="project-title"></h1>
-    <p><strong>Project Type:</strong> <span id="project-type"></span></p>
-    <p><strong>Date:</strong> <span id="project-date"></span></p>
-    <p id="project-description"></p>
-    <img id="project-image" src="" alt="Project Image" />
+    <div class="project-details-container">
+      <div class="project-details-text">
+        <h1 id="project-title"></h1>
+        <p><strong>Project Type:</strong> <span id="project-type"></span></p>
+        <p><strong>Date:</strong> <span id="project-date"></span></p>
+        <p id="project-description"></p>
+      </div>
+      <div class="project-details-gallery">
+        <div id="gallery-items"></div>
+      </div>
+    </div>
+    <div class="project-navigation">
+      <button id="prev-project" onclick="navigateProject(-1)">Previous Project</button>
+      <button id="next-project" onclick="navigateProject(1)">Next Project</button>
+    </div>
   </section>
 
   <footer class="site-footer">
-    <p>&copy; 2023 Aryan Rallan. All rights reserved.</p>
+    <p>&copy; 2025 Aryan Rallan. All rights reserved.</p>
   </footer>
 
 </body>
