@@ -54,7 +54,7 @@ const projects = [
     title: "Brittney's Bad Day (C++ game)",
     type: "C++ Code",
     date: "December 2023",
-    description: `For a university project, I created a wave-based game where the player must survive to the end of a round to receive upgrades to get to the furthest round possible.`,
+    description: `For a university project, I created a wave-based game where the player must survive to the end of a round to receive upgrades to get to the furthest round possible.This game was made using C++ and a code-based engine developed by the university. For each enemy, I had to use pointers to assign attributes such as health and speed for each enemy type and dynamically spawn new game objects such as ink projectiles using pointers.  All game assets were created by myself.For a university project, I created a wave-based game where the player must survive to the end of a round to receive upgrades to get to the furthest round possible.`,
     media: [
       { type: "image", src: "./images/BBD.jpg" },
       { type: "video", src: "./videos/Brittney's Bad Day.mp4" },
@@ -130,6 +130,10 @@ function updateProjectDetails() {
       const img = document.createElement("img");
       img.src = item.src;
       img.alt = project.title;
+
+      // Add click event listener to enlarge the image (only in project details)
+      img.addEventListener("click", () => openImageModal(img.src));
+
       galleryItems.appendChild(img);
     } else if (item.type === "video") {
       const video = document.createElement("video");
@@ -152,4 +156,22 @@ function navigateProject(direction) {
   currentProjectIndex += direction;
   updateProjectDetails();
 }
+
+function openImageModal(imageSrc) {
+  const modal = document.getElementById("image-modal");
+  const modalImage = document.getElementById("modal-image");
+
+  modalImage.src = imageSrc; // Set the source of the modal image
+  modal.style.display = "block"; // Show the modal
+}
+
+function closeImageModal() {
+  const modal = document.getElementById("image-modal");
+  modal.style.display = "none"; // Hide the modal
+}
+
+// Remove event listeners for portfolio grid images
+document.querySelectorAll(".portfolio-item img").forEach((img) => {
+  img.removeEventListener("click", () => openImageModal(img.src));
+});
 

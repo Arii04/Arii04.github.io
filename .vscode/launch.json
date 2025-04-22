@@ -9,7 +9,7 @@
             "type": "chrome",
             "request": "launch",
             "name": "Open index.html",
-            "file": "c:\\Users\\Arii\\Arii04.github.io\\index.html"
+            "file": "c:\\Users\\Arii\\Arii04.github.io\\portfolio.html"
         }
     ]
 }
