@@ -415,8 +415,9 @@ h1, h2, h3, h4, h5, h6 {
 
 .portfolio-item p {
   margin-top: 0.5rem;
-  font-size: 1rem;
-  color: #000;
+  font-size: 1.2rem; /* Increase font size */
+  font-weight: bold; /* Make text bold */
+  color: #000; /* Ensure text color is visible */
 }
 
 /* Project Details Section */
