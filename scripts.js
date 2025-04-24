@@ -118,7 +118,7 @@ const projects = [
     type: "Unreal Engine Game Development",
     date: "April 2025",
     description: `This was a group project in which we were tasked to create an Unreal Engine game. We had settled on a parkour with a large emphasis on movement. I had implemented the movement mechanics such as wall running and wall jumping, as well as the dah ability. I also created a Niagara VFX system for the meteors. \n I approached this project through making it as modular as possible so that values such as speed and jump height can be tweaked later if needed.`,
-    github: "xyz.com",
+    github: "",
     media: [
       { type: "image", src: "./images/Nova.png" },
       { type: "video", src: "./videos/Nova.mp4" },
