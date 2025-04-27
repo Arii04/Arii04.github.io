@@ -703,3 +703,11 @@ h1, h2, h3, h4, h5, h6 {
     max-width: 100%;
   }
 }
+
+/* Download CV Link Styles */
+.download-cv-link .highlight {
+  color: #E8D4B0; /* Change text color to the cream used on the website */
+  text-decoration: underline; /* Keep the text underlined */
+}
+
+
